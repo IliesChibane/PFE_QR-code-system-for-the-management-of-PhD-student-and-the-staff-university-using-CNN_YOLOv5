@@ -1076,13 +1076,13 @@ class Ui_MainWindow(object):
             self.tel.clear()
             self.tel.setText("Telephone : Doctorant inexistant")
 
-        p = info['photo'].to_string(index=False)[1:]
+        p = info['photo'].to_string(index=False)
         pdp = QPixmap(p)
         pdp = pdp.scaled(140, 140);
         self.photo.setPixmap(pdp)
         paqr = ""
-        if(self.QRE(mat[1:] + ".png")==True):
-            paqr="QRcode"+ "\\" + mat[1:] + ".png"
+        if(self.QRE(mat + ".png")==True):
+            paqr="QRcode"+ "\\" + mat + ".png"
         else:
             paqr = "QRcode"+"\\"+"NOQR.png"
         pqr = QPixmap(paqr)
